@@ -4,10 +4,8 @@ title:  "Hyper-V in Windows 10 and Windows 11 Home Edition"
 author: matlakow
 categories: [ Windows, hyper-V ]
 image: assets/images/Hyper-V-b.png.webp
-
 ---
 
-# Hyper-V in Windows 10 and Windows 11 Home Edition
 
 Hyper-V in Windows 10 and Windows 11 allows running Virtual Machine. It is supported only in Pro, Enterprise and Education Edition of Windows 10 and Windows 11 by default. But this guide will show you how to enable it in Home Editions of Windows 10 and Windows 11.
 
