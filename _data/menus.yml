@@ -21,12 +21,12 @@ footermenu:
 - title: Home
   url: ""
 
-- title: Privacy Policy
-  url: "privacy-policy/"
-
+#- title: Privacy Policy
+#  url: "privacy-policy/"
+#
 - title: Contact
   url: "contact/"
 
 - title: Download
-  url: https://bootstrapstarter.com/template-affiliates-bootstrap-jekyll/  
+  url: https://github.com/matlakow/useful
   external: true
