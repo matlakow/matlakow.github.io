@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Ultimate Windows Utility"
-author: sal
+author: matlakow
 categories: [ windows, software ]
 image: assets/images/tuw.webp
 ---
