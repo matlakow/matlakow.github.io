@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Microsoft Activation Scripts (MAS)"
+title:  "Microsoft,Windows,Office Activation Scripts (MAS)"
 author: matlakow
 categories: [ Microsoft, crack ]
 image: assets/images/mas.png
