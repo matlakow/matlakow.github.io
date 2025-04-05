@@ -2,7 +2,7 @@
 layout: page
 title: About
 permalink: "/about/"
-image: assets/images/logo-smaill.jpg
+image: assets/images/logo-small.jpg
 ---
 # Łukasz Matlakowski Blog
 
