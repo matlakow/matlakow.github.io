@@ -2,8 +2,8 @@
 layout: post
 title:  "Linux Ldap Proxy - GLAuth and using ldapsearch"
 author: matlakow
-categories: [ Linux, openssl, ldap ]
-image: assets/images/mas.png
+categories: [ Linux, openssl, ldap, glauth ]
+image: assets/images/Activedirectory.png
 ---
 konfigurujemy windows wedlug https://www.miniorange.com/guide-to-setup-ldaps-on-windows-server
 
