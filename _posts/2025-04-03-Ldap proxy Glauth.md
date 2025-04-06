@@ -5,7 +5,7 @@ author: matlakow
 categories: [ Linux, openssl, ldap, glauth ]
 image: assets/images/Activedirectory.png
 ---
-Go-lang LDAP Authentication (GLAuth) is a secure, easy-to-use, LDAP server w/ configurable backends. Centrally manage accounts across your infrastructure. Centrally manage SSH keys, Linux accounts, and passwords for cloud servers. Lightweight alternative to OpenLDAP and Active Directory for development, or a homelab
+Go-lang LDAP Authentication (GLAuth) is a secure, easy-to-use, LDAP server with configurable backends. Centrally manage accounts across your infrastructure. Centrally manage SSH keys, Linux accounts, and passwords for cloud servers. Lightweight alternative to OpenLDAP and Active Directory for development, or a homelab.
 
 Installing GLAuth is simple:
 
@@ -22,8 +22,10 @@ debug = true
   # run on a non privileged port
   listen = "0.0.0.0:3893"
   tls = false # enable StartTLS support
-  tlsCertPath = "server.crt"
-  tlsKeyPath = "server.key"
+  # to enable ldaps generate a certificate, eg. with:
+  # openssl req -x509 -newkey rsa:4096 -keyout srv.key -out srv.crt -days 365 -nodes -subj '/CN=`hostname`'
+  tlsCertPath = "srv.crt"
+  tlsKeyPath = "srv.key"
 [ldaps]
   enabled = true
   listen = "0.0.0.0:3894"
