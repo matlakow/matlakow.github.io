@@ -9,7 +9,7 @@ Installing GLAuth is simple:
 
 * Download a precompiled binary from the** **[releases](https://github.com/glauth/glauth/releases) page.
 * Download the** **[example config file](https://github.com/glauth/glauth/blob/master/v2/sample-simple.cfg).
-* Start the GLAuth server, referencing the path to the desired config file with** **`-c ./glauth64 -c sample-simple.cfg`
+* Start the GLAuth server, referencing the path to the desired config file with ./glauth64 -c sample-simple.cfg
 
 This is my config, with works with Windows 2025 AD environment:
 
