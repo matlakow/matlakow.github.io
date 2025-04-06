@@ -19,9 +19,8 @@ This is my config, with works with Windows 2025 AD environment:
 debug = true
 [ldap]
   enabled = true
-  # run on a non privileged port
   listen = "0.0.0.0:3893"
-  tls = false # enable StartTLS support
+  tls = false
   # to enable ldaps generate a certificate, eg. with:
   # openssl req -x509 -newkey rsa:4096 -keyout srv.key -out srv.crt -days 365 -nodes -subj '/CN=`hostname`'
   tlsCertPath = "srv.crt"
