@@ -13,9 +13,38 @@ Installing GLAuth is simple:
 
 This is my config, with works with Windows 2025 AD environment:
 
+```
+debug = true
+[ldap]
+  enabled = true
+  # run on a non privileged port
+  listen = "0.0.0.0:3893"
+  tls = false # enable StartTLS support
+  tlsCertPath = "server.crt"
+  tlsKeyPath = "server.key"
+[ldaps]
+  enabled = true
+  listen = "0.0.0.0:3894"
+  cert = "/etc/glauth/server.crt"
+  key = "/etc/glauth/server.key"
+[tracing]
+ enabled = true
+[backend]
+  datastore = "ldap"
+  servers = ["ldaps://lsrv-ad-01.ad.matlakow.pl:636"] 
+  insecure = true
+[behaviors]
+  IgnoreCapabilities = false
+  LimitFailedBinds = true
+  NumberOfFailedBinds = 3
+  PeriodOfFailedBinds = 10
+  BlockFailedBindsFor = 60
+  PruneSourceTableEvery = 600
+  PruneSourcesOlderThan = 600
 
+```
 
-First we configure LDAPS on Windows:
+Then we should configure LDAPS on Windows:
 
 ```
 https://www.miniorange.com/guide-to-setup-ldaps-on-windows-server
