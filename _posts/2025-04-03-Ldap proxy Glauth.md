@@ -62,7 +62,7 @@ openssl s_client -connect lsrv-ad-01.ad.matlakow.pl:636 -showcerts
 Then we should download cert from AD:
 
 ```
-openssl s_client -connect lsrv-ad-01.ad.matlakow.pl:636 -showcerts /dev/null | openssl x509 -outform PEM > ad_cert.crt
+</dev/null 2>/dev/null openssl s_client -connect lsrv-ad-01.ad.matlakow.pl:636 -showcerts /dev/null 2>/dev/null  | openssl x509 -outform PEM > ad_cert.crt
 ```
 
 Let's copy cert:
