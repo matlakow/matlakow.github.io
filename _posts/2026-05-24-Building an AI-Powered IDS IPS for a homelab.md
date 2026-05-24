@@ -15,30 +15,21 @@ My setup is based on:
 * SELKS package by Stamus Networks [link](https://www.stamus-networks.com/hubfs/Datasheets/StamusNetworks-DS-SELKS-062024-1.pdf?hsLang=en)
 * mikrocata2selks integration project for easier SELKS deployment [link](https://github.com/angolo40/mikrocata2selks)
 * Proxmox VE as the hypervisor [link](https://www.proxmox.com/en/products/proxmox-virtual-environment/overview)
-* Ollama￼ with GPU acceleration for AI analysis [link](https://docs.ollama.com/gpu)
+* Ollama with GPU acceleration for AI analysis [link](https://docs.ollama.com/gpu)
 * Graylog for log collection, normalization, and analysis [link](https://graylog.org/products/source-available/)
 
 ⸻
 
 Hardware Requirements
 
-1. Router
-
-* MikroTik RB5009UG+S+
-
+1. Router - MikroTik RB5009UG+S+
 2. Proxmox Host for VMs
 
-2a. Suricata / SELKS VM
+* Suricata / SELKS VM (under the hood this runs multiple Docker containers)
 
-(under the hood this runs multiple Docker containers)
+Recommended: 4 CPU cores, 16 GB RAM, 64 GB SSD/NVMe storage
 
-Recommended:
-
-* 4 CPU cores
-* 16 GB RAM
-* 64 GB SSD/NVMe storage
-
-2b. AI VM
+* AI VM
 
 Used for Ollama and AI analysis.
 
