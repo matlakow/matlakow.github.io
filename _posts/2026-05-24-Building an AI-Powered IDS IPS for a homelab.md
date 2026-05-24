@@ -25,40 +25,11 @@ Hardware Requirements
 1. Router - MikroTik RB5009UG+S+
 2. Proxmox Host for VMs
 
-* Suricata / SELKS VM (under the hood this runs multiple Docker containers)
-
-Recommended: 4 CPU cores, 16 GB RAM, 64 GB SSD/NVMe storage
-
-* AI VM
-
-Used for Ollama and AI analysis.
-
-Recommended:
-
-* 4 CPU cores
-* 8 GB RAM
-* GPU acceleration
-* 32 GB HDD/SSD storage
-
-2c. Small Linux LXC/LXD Container
-
-Used for automation scripts.
-
-Recommended:
-
-* 2 CPU cores
-* 2 GB RAM
-* 16 GB storage
-
-2d. Graylog Stack VM
-
-(also running multiple Docker containers)
-
-Recommended:
-
-* 8 CPU cores
-* 16 GB RAM
-* 64 GB SSD/NVMe storage
+* [ ] Suricata / SELKS VM (under the hood this runs multiple Docker containers) Recommended: 4 CPU cores, 16 GB RAM, 64 GB SSD/NVMe storage
+* [ ] AI VM Used for Ollama and AI analysis.
+  Recommended: 4CPU cores 8 GB RAM GPU acceleration 32 GB HDD/SSD storage
+* [ ] Small Linux LXC/LXD Container Used for automation scripts. Recommended: 2 CPU cores 2 GB RAM 16 GB HDD storage
+* [ ] Graylog Stack VM (also running multiple Docker containers) Recommended: 8 CPU cores 16 GB RAM 64 GB SSD/NVMe storage
 
 ⸻
 
