@@ -12,8 +12,8 @@ It also explains how to extend the setup with an AI-powered SIEM solution.
 My setup is based on:
 
 * MikroTik router — specifically the MikroTik RB5009UG+S+
-* SELKS package by Stamus Networks￼[link](https://www.stamus-networks.com/hubfs/Datasheets/StamusNetworks-DS-SELKS-062024-1.pdf?hsLang=en)
-* mikrocata2selks integration project￼ for easier SELKS deployment
+* SELKS package by Stamus Networks [link](https://www.stamus-networks.com/hubfs/Datasheets/StamusNetworks-DS-SELKS-062024-1.pdf?hsLang=en)
+* mikrocata2selks integration project for easier SELKS deployment [link](https://github.com/angolo40/mikrocata2selks)
 * Proxmox VE as the hypervisor
 * Ollama￼ with GPU acceleration for AI analysis
 * Graylog for log collection, normalization, and analysis
