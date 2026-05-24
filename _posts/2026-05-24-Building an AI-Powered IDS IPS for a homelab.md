@@ -1,12 +1,14 @@
 ---
 layout: post
-title:  "Building an AI-Powered IDS/IPS stack for a Homelab"
+title:  "Building an AI-Powered IDS/IPS for a Homelab"
 author: matlakow
-categories: [ Linux ]
-image: assets/images/2.jpg
+categories: [ Linux, Proxmox, AI, Suricata, Mikrotik, Graylog, Ollama ]
+image: assets/images/Activedirectory.png
 ---
 
-# **Building an AI-Powered IDS/IPS stack for a Homelab**
+# **Building an AI-Powered IDS/IPS for a Homelab**
+
+```
 
 This article shows how you can easily add IDS/IPS functionality to your homelab.
 It also explains how to extend the setup with an AI-powered SIEM solution.
