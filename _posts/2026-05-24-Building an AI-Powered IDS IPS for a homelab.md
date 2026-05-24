@@ -9,7 +9,7 @@ image: assets/images/homelab_security.png
 This article shows how you can easily add IDS/IPS functionality to your homelab.
 It also explains how to extend the setup with an AI-powered SIEM solution.
 
-My setup is based on:
+**My setup is based on:**
 
 * MikroTik router — specifically the MikroTik RB5009UG+S+ [link](https://mikrotik.com/product/rb5009ug_s_in)
 * SELKS package by Stamus Networks [link](https://www.stamus-networks.com/hubfs/Datasheets/StamusNetworks-DS-SELKS-062024-1.pdf?hsLang=en)
@@ -18,33 +18,25 @@ My setup is based on:
 * Ollama with GPU acceleration for AI analysis [link](https://docs.ollama.com/gpu)
 * Graylog for log collection, normalization, and analysis [link](https://graylog.org/products/source-available/)
 
-⸻
-
-Hardware Requirements
+**Hardware Requirements:**
 
 1. Router - MikroTik RB5009UG+S+
 2. Proxmox Host for VMs
 
-* [ ] Suricata / SELKS VM (under the hood this runs multiple Docker containers) Recommended: 4 CPU cores, 16 GB RAM, 64 GB SSD/NVMe storage
-* [ ] AI VM Used for Ollama and AI analysis.
+* Suricata / SELKS VM (under the hood this runs multiple Docker containers) Recommended: 4 CPU cores, 16 GB RAM, 64 GB SSD/NVMe storage
+* AI VM Used for Ollama and AI analysis.
   Recommended: 4CPU cores 8 GB RAM GPU acceleration 32 GB HDD/SSD storage
-* [ ] Small Linux LXC/LXD Container Used for automation scripts. Recommended: 2 CPU cores 2 GB RAM 16 GB HDD storage
-* [ ] Graylog Stack VM (also running multiple Docker containers) Recommended: 8 CPU cores 16 GB RAM 64 GB SSD/NVMe storage
+* Small Linux LXC/LXD Container Used for automation scripts. Recommended: 2 CPU cores 2 GB RAM 16 GB HDD storage
+* Graylog Stack VM (also running multiple Docker containers) Recommended: 8 CPU cores 16 GB RAM 64 GB SSD/NVMe storage
 
-⸻
-
-Summary
-
-You will need:
+Summary, you will need:
 
 * around 40–50 GB free RAM
-* a machine with at least 10 CPU cores
+* a machine with at least 10 CPU cores and powerfull GPU
 * about 200 GB of fast SSD/NVMe storage
 * and a lot of free time, energy, and enthusiasm to work on it ;-)
 
-⸻
-
-How It Works
+**How It Works**
 
 The MikroTik router uses the built-in Packet Sniffer feature to mirror WAN traffic to Suricata.
 
@@ -70,6 +62,9 @@ Because the AI has visibility into logs from both systems, it can:
 * detect suspicious behavior,
 * and identify possible security incidents.
 
-Finally, the system periodically informs me about serious attacks and important security threats detected in the network.
--------------------------------------------------------------------------------------------------------------------------
+  Finally, the system periodically informs me about serious attacks and important security threats detected in the network.
+
+~~~~~~
+-----------------------------------------------------------------------------------------------------------------------------
+~~~~~~
 
