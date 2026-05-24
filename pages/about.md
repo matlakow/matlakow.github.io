@@ -2,14 +2,13 @@
 layout: page
 title: About
 permalink: "/about/"
-image: assets/images/image_me_logo.png
 ---
 
 <div style="text-align:center;">
   <img src="{{ '/assets/images/image_me_logo.png' | relative_url }}" 
        alt="My logo" 
-       width="200" 
-       height="300">
+       width="400" 
+       height="600">
 </div>
 
 # Łukasz Matlakowski Blog
