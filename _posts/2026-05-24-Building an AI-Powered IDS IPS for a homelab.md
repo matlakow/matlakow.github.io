@@ -3,7 +3,7 @@ layout: post
 title:  "Building an AI-Powered IDS/IPS for a Homelab"
 author: matlakow
 categories: [ Linux, Proxmox, AI, Suricata, Mikrotik, Graylog, Ollama ]
-image: assets/images/Activedirectory.png
+image: assets/images/homelab_security.png
 ---
 
 This article shows how you can easily add IDS/IPS functionality to your homelab.
