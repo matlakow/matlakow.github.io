@@ -53,7 +53,7 @@ Next, a simple script collects:
 * additional MikroTik logs,
 * and other useful security information.
 
-The script then sends this data to  Ollama￼ for AI analysis.
+The script then sends this data to  Ollama for AI analysis.
 
 Because the AI has visibility into logs from both systems, it can:
 
@@ -61,10 +61,10 @@ Because the AI has visibility into logs from both systems, it can:
 * analyze attack patterns,
 * detect suspicious behavior,
 * and identify possible security incidents.
-
+  
   Finally, the system periodically informs me about serious attacks and important security threats detected in the network.
 
 ~~~~~~
------------------------------------------------------------------------------------------------------------------------------
+
 ~~~~~~
 
