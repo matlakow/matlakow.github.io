@@ -62,7 +62,7 @@ Because the AI has visibility into logs from both systems, it can:
 * detect suspicious behavior,
 * and identify possible security incidents.
   
-  Finally, the system periodically informs me about serious attacks and important security threats detected in the network.
+Finally, the system periodically informs me about serious attacks and important security threats detected in the network.
 
 ~~~~~~
 
