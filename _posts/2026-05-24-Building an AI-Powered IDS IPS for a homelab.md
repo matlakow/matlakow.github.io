@@ -4,6 +4,7 @@ title:  "Building an AI-Powered IDS/IPS for a Homelab"
 author: matlakow
 categories: [ Linux, Proxmox, AI, Suricata, Mikrotik, Graylog, Ollama ]
 image: assets/images/Activedirectory.png
+---
 
 This article shows how you can easily add IDS/IPS functionality to your homelab.
 It also explains how to extend the setup with an AI-powered SIEM solution.
@@ -11,7 +12,7 @@ It also explains how to extend the setup with an AI-powered SIEM solution.
 My setup is based on:
 
 * MikroTik router — specifically the MikroTik RB5009UG+S+
-* SELKS package by Stamus Networks￼
+* SELKS package by Stamus Networks￼[link](https://www.stamus-networks.com/hubfs/Datasheets/StamusNetworks-DS-SELKS-062024-1.pdf?hsLang=en)
 * mikrocata2selks integration project￼ for easier SELKS deployment
 * Proxmox VE as the hypervisor
 * Ollama￼ with GPU acceleration for AI analysis
@@ -108,4 +109,5 @@ Because the AI has visibility into logs from both systems, it can:
 * and identify possible security incidents.
 
 Finally, the system periodically informs me about serious attacks and important security threats detected in the network.
----
+-------------------------------------------------------------------------------------------------------------------------
+
