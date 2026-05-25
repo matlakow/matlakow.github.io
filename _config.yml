@@ -20,7 +20,7 @@ kramdown:
 sass:
   sass_dir: _sass
   style: :compressed
-ganalytics: UA-113961478-1
+ganalytics: G-8QDXSMVLRM
 
 # Authors
 authors:
@@ -31,7 +31,7 @@ authors:
     email: matlakow@gmail.com
     web: https://matlakow.github.io
     twitter: https://twitter.com/matlakow
-    description: "Just ordinary IT Guy"
+    description: "Łukasz Matlakowski IT Blog"
   john:
     name: John
     display_name: John
