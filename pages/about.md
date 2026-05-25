@@ -5,7 +5,7 @@ permalink: "/about/"
 ---
 <h1 style="text-align:center; margin-bottom:40px;">
 
-Łukasz Matlakowski Blog
+Łukasz Matlakowski IT Blog
 
 </h1>
 
