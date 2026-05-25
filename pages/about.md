@@ -5,31 +5,11 @@ permalink: "/about/"
 ---
 <h1 style="text-align:center; margin-bottom:40px;">
 
-  Łukasz Matlakowski Blog
+Łukasz Matlakowski Blog
 
 </h1>
 
-<img 
-
-  src="{{ '/assets/images/logo_dark.png' | relative_url }}"
-
-  alt="My logo"
-
-  style="
-
-    float:right;
-
-    width:400px;
-
-    margin-left:40px;
-
-    margin-bottom:20px;
-
-    border-radius:12px;
-
-  "
-
->
+<img src="{{ '/assets/images/logo_dark.png' | relative_url }}" alt="My logo" style="float:right;width:400px;margin-left:40px;margin-bottom:20px;border-radius:12px;"
 
 My name is Łukasz and I'm here to share with you my knowledge and experience of over 20 years of working in IT.
 
