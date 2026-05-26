@@ -3,10 +3,16 @@ layout: post
 title:  "Ollama Performance Benchmark"
 author: matlakow
 categories: [ linux, ai, ollama, macbook ]
-image: assets/images/logo_post_10052026.png
 ---
 
+<h1 style="text-align:center; margin-bottom:40px;">
+
 **P106-090 vs Apple M1 Air**
+
+</h1>
+
+<img src="{{ '/assets/images/logo_post_10052026.png' | relative_url }}" alt="My logo">
+
 
 I recently decided to benchmark my local Ollama setup before upgrading the GPU in my inference server.
 The goal was simple: establish a reliable baseline and measure the real-world improvement after replacing the graphics card.
@@ -74,4 +80,3 @@ For lightweight 7B models:
 * Apple Silicon is extremely competitive
 * old mining GPUs are no longer a great value for LLM inference
 * modern RTX cards would provide a massive jump in performance
-
