@@ -3,6 +3,7 @@ layout: post
 title:  "Ollama Performance Benchmark"
 author: matlakow
 categories: [ linux, ai, ollama, macbook ]
+image: assets/images/logo_post_10052026.png
 ---
 
 **P106-090 vs Apple M1 Air**
