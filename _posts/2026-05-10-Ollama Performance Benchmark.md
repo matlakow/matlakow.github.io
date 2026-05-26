@@ -40,6 +40,21 @@ $ curl -s http://localhost:11434/api/generate \
   }' | jq
 ```
 
+```bash
+curl -s http://localhost:11434/api/generate \
+  -d '{
+    "model": "qwen2.5:7b",
+    "prompt": "Write a detailed explanation of how an internal combustion engine works.",
+    "stream": false,
+    "options": {
+      "num_predict": 512,
+      "num_ctx": 4096,
+      "temperature": 0,
+      "seed": 123
+    }
+  }' | jq
+```
+
 The important metrics returned by Ollama are:
 
 * eval_count — generated tokens
