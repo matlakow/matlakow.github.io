@@ -12,13 +12,13 @@ The goal was simple: establish a reliable baseline and measure the real-world im
 
 Test Setup
 
-Server Ollama GPU
+Server Ollama GPU:
 
 * NVIDIA P106-090 6 GB
 * Ollama running on Linux
 * Model: qwen2.5:7b
 
-Laptop
+Laptops:
 
 * Apple MacBook Air M1 16 GB and Macbook Air M4 16GB
 * Ollama running locally
@@ -41,6 +41,39 @@ $ curl -s http://localhost:11434/api/generate \
   }' | jq
 ```
 
+ddd
+
+```bash
+curl -s http://localhost:11434/api/generate \
+  -d '{
+    "model": "qwen2.5:7b",
+    "prompt": "Write a detailed explanation of how an internal combustion engine works.",
+    "stream": false,
+    "options": {
+      "num_predict": 512,
+      "num_ctx": 4096,
+      "temperature": 0,
+      "seed": 123
+    }
+  }' | jq
+```
+
+ddfdd
+
+> curl -s http://localhost:11434/api/generate
+> -d '{
+> "model": "qwen2.5:7b",
+> "prompt": "Write a detailed explanation of how an internal combustion engine works.",
+> "stream": false,
+> "options": {
+> "num_predict": 512,
+> "num_ctx": 4096,
+> "temperature": 0,
+> "seed": 123
+> }
+> }' | jq
+
+
 The important metrics returned by Ollama are:
 
 * eval_count — generated tokens
@@ -50,16 +83,7 @@ The important metrics returned by Ollama are:
 
 Results
 
-NVIDIA P106-090 6 GB
-
-Average generation speed:
-~11.45 tokens/sec
-
-Apple M1 Air 16 GB
-~13.0 tokens/sec
-
-Apple M4 Air 16 GB
-~21,9 tokens/sec
+![1779801815516](images/2026-05-10-OllamaPerformanceBenchmark/1779801815516.png)
 
 Surprise Result
 The Apple M1 Air was actually around 14% faster than the old Pascal-based NVIDIA mining GPU, the M4 chip is about 70% faster than M1
