@@ -5,7 +5,6 @@ author: matlakow
 categories: [ linux, ai, ollama, macbook ]
 image: assets/images/ollama.png
 ---
-
 **P106-090 vs Apple M1 Air vs Apple M3**
 
 I recently decided to benchmark my local Ollama setup before upgrading the GPU in my production server.
@@ -27,7 +26,8 @@ Laptops:
 
 Benchmark Command:
 
-$ curl -s http://localhost:11434/api/generate
+```bash
+curl -s http://localhost:11434/api/generate
 -d '{
 "model": "qwen2.5:7b",
 "prompt": "Write a detailed explanation of how an internal combustion engine works.",
@@ -39,6 +39,7 @@ $ curl -s http://localhost:11434/api/generate
 "seed": 123
 }
 }' | jq
+```
 
 The important metrics returned by Ollama are:
 
@@ -50,7 +51,6 @@ The important metrics returned by Ollama are:
 Results
 
 ![LLM inference performance chart](/assets/images/LLM_Inference_Performance.png)
-
 
 Surprise Result
 The Apple M1 Air was actually around 14% faster than the old Pascal-based NVIDIA mining GPU, the M4 chip is about 70% faster than M1
@@ -67,4 +67,3 @@ For lightweight 7B models:
 * Apple Silicon is extremely competitive
 * old mining GPUs are no longer a great value for LLM inference
 * modern RTX cards would provide a massive jump in performance
-
