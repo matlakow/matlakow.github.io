@@ -25,6 +25,7 @@ Laptop
 * Same model and prompt
 
 Benchmark Command:
+
 ```console
 $ curl -s http://localhost:11434/api/generate \
   -d '{
@@ -39,6 +40,9 @@ $ curl -s http://localhost:11434/api/generate \
     }
   }' | jq
 ```
+
+to jest test
+
 
 ```bash
 curl -s http://localhost:11434/api/generate \
