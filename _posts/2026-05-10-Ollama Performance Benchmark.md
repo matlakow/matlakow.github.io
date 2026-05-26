@@ -20,7 +20,7 @@ Server GPU
 
 Laptop
 
-* Apple MacBook Air M1 16 GB
+* Apple MacBook Air M1 16 GB and Macbook Air M4 16GB
 * Ollama running locally
 * Same model and prompt
 
@@ -56,6 +56,27 @@ curl -s http://localhost:11434/api/generate \
       "seed": 123
     }
   }' | jq
+```
+
+```liquid
+
+{% highlight bash linenos %}
+
+curl -s http://localhost:11434/api/generate \
+  -d '{
+    "model": "qwen2.5:7b",
+    "prompt": "Write a detailed explanation of how an internal combustion engine works.",
+    "stream": false,
+    "options": {
+      "num_predict": 512,
+      "num_ctx": 4096,
+      "temperature": 0,
+      "seed": 123
+    }
+  }' | jq
+
+{% endhighlight %}
+
 ```
 
 The important metrics returned by Ollama are:
