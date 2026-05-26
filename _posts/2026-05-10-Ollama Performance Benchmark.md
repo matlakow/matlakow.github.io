@@ -5,13 +5,9 @@ author: matlakow
 categories: [ linux, ai, ollama, macbook ]
 ---
 
-<h1 style="text-align:center; margin-bottom:40px;">
-
 **P106-090 vs Apple M1 Air**
 
-</h1>
 
-<img src="{{ '/assets/images/logo_post_10052026.png' | relative_url }}" alt="My logo">
 
 
 I recently decided to benchmark my local Ollama setup before upgrading the GPU in my inference server.
