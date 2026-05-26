@@ -5,11 +5,7 @@ author: matlakow
 categories: [ linux, ai, ollama, macbook ]
 image: assets/images/logo_post_10052026.png
 ---
-
 **P106-090 vs Apple M1 Air**
-
-
-
 
 I recently decided to benchmark my local Ollama setup before upgrading the GPU in my inference server.
 The goal was simple: establish a reliable baseline and measure the real-world improvement after replacing the graphics card.
@@ -29,18 +25,21 @@ Laptop
 * Same model and prompt
 
 Benchmark Command:
-*curl -s http://localhost:11434/api/generate
--d '{
-"model": "qwen2.5:7b",
-"prompt": "Write a detailed explanation of how an internal combustion engine works.",
-"stream": false,
-"options": {
-"num_predict": 512,
-"num_ctx": 4096,
-"temperature": 0,
-"seed": 123
-}
-}' | jq*
+
+```bash
+curl -s http://localhost:11434/api/generate \
+  -d '{
+    "model": "qwen2.5:7b",
+    "prompt": "Write a detailed explanation of how an internal combustion engine works.",
+    "stream": false,
+    "options": {
+      "num_predict": 512,
+      "num_ctx": 4096,
+      "temperature": 0,
+      "seed": 123
+    }
+  }' | jq
+```
 
 The important metrics returned by Ollama are:
 
