@@ -25,9 +25,8 @@ Laptop
 * Same model and prompt
 
 Benchmark Command:
-
-```bash
-curl -s http://localhost:11434/api/generate \
+```console
+$ curl -s http://localhost:11434/api/generate \
   -d '{
     "model": "qwen2.5:7b",
     "prompt": "Write a detailed explanation of how an internal combustion engine works.",
