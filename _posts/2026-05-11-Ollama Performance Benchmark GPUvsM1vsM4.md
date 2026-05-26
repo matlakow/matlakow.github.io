@@ -41,7 +41,7 @@ $ curl -s http://localhost:11434/api/generate \
   }' | jq
 ```
 
-to jest test
+to jest test s
 
 ```bash
 curl -s http://localhost:11434/api/generate \
