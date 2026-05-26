@@ -5,7 +5,7 @@ author: matlakow
 categories: [ linux, ai, ollama, macbook ]
 image: assets/images/logo_post_10052026.png
 ---
-**P106-090 vs Apple M1 Air**
+**P106-090 vs Apple M1 Air vs Apple M3**
 
 I recently decided to benchmark my local Ollama setup before upgrading the GPU in my inference server.
 The goal was simple: establish a reliable baseline and measure the real-world improvement after replacing the graphics card.
@@ -42,7 +42,6 @@ $ curl -s http://localhost:11434/api/generate \
 ```
 
 to jest test
-
 
 ```bash
 curl -s http://localhost:11434/api/generate \
