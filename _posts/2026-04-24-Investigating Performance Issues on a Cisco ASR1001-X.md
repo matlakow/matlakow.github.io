@@ -3,7 +3,7 @@ layout: post
 title:  "Investigating Performance Issues on a Cisco ASR1001-X"
 author: matlakow
 categories: [ Cisco, performance, cli, networking ]
-image: assets/images/Activedirectory.png
+image: assets/images/asr.png
 ---
 **Control Plane vs Data Plane During a Suspected DDoS Attack**
 
