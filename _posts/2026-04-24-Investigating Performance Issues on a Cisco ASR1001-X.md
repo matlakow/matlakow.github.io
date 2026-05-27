@@ -12,17 +12,18 @@ CLI responses became delayed, monitoring showed intermittent spikes, and overall
 
 At first glance, it looked like a classic CPU overload issue, possibly caused by a DDoS attack or excessive traffic hitting the router.
 
-This post describes the troubleshooting process I used and, more importantly, explains the difference between the ****Control Plane CPU** and the** **Data Plane (QFP)** on Cisco ASR routers.
+This post describes the troubleshooting process I used and, more importantly, explains the difference between the **Control Plane CPU** and the **Data Plane (QFP)** on Cisco ASR routers.
+
 
 ---
 
-## Understanding Cisco ASR Architecture
+**Understanding Cisco ASR Architecture**
 
 One important thing to understand about the Cisco ASR1001-X is that it does not operate like traditional routers where a single CPU handles everything.
 
 The platform is divided into two major processing domains:
 
-### 1. Control Plane (Route Processor / IOS XE CPU)
+**1. Control Plane (Route Processor / IOS XE CPU)**
 
 The Control Plane is responsible for:
 
@@ -45,9 +46,7 @@ In my case, the CPU looked completely healthy.
 
 That was the first clue that the problem might not be related to the main IOS XE CPU.
 
----
-
-### 2. Data Plane (QFP – Quantum Flow Processor)
+**2. Data Plane (QFP – Quantum Flow Processor)**
 
 The real packet forwarding engine inside the ASR1001-X is the QFP (Quantum Flow Processor).
 
@@ -81,7 +80,7 @@ And for deeper visibility:
 
 ---
 
-# First Troubleshooting Steps
+**First Troubleshooting Steps**
 
 The first thing I did was disable unnecessary debugging and optimize logging:
 
@@ -91,7 +90,7 @@ This helps reduce unnecessary CPU load caused by excessive console logging or ac
 
 ---
 
-# Checking the Control Plane
+**Checking the Control Plane**
 
 I started with the standard CPU inspection:
 
@@ -111,7 +110,7 @@ So the Control Plane was healthy.
 
 ---
 
-# Investigating the Data Plane (QFP)
+**Investigating the Data Plane (QFP)**
 
 The next step was checking the forwarding hardware:
 
@@ -131,15 +130,15 @@ This is especially common during:
 
 ---
 
-# Looking Into Feature-Level Statistics
+**Looking Into Feature-Level Statistics**
 
 To identify which subsystem was consuming resources, I inspected feature statistics.
 
-### NAT datapath statistics
+NAT datapath statistics
 
 <pre class="overflow-visible! px-0!" data-start="3618" data-end="3690"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!"><div class="sticky bg-token-border-light"></div></div></div><div class="relative"><div class=""><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>show platform hardware qfp active feature nat datapath stats</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class=""></div></div></div></div></div></pre>
 
-### PPPoE datapath statistics
+PPPoE datapath statistics
 
 <pre class="overflow-visible! px-0!" data-start="3723" data-end="3797"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!"><div class="sticky bg-token-border-light"></div></div></div><div class="relative"><div class=""><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>show platform hardware qfp active feature pppoe datapath stats</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class=""></div></div></div></div></div></pre>
 
@@ -151,7 +150,7 @@ Similarly, large-scale CGNAT or dynamic NAT translations may overload the datapa
 
 ---
 
-# Key Takeaway
+**Key Takeaway**
 
 One of the biggest lessons from troubleshooting Cisco ASR platforms is:
 
