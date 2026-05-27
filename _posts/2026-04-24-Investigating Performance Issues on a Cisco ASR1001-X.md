@@ -14,7 +14,6 @@ At first glance, it looked like a classic CPU overload issue, possibly caused by
 
 This post describes the troubleshooting process I used and, more importantly, explains the difference between the **Control Plane CPU** and the **Data Plane (QFP)** on Cisco ASR routers.
 
-
 ---
 
 **Understanding Cisco ASR Architecture**
@@ -158,8 +157,8 @@ One of the biggest lessons from troubleshooting Cisco ASR platforms is:
 
 On ASR routers, you always need to inspect both:
 
-* the **Control Plane**
-* and the **Data Plane (QFP)**
+* the Control Plane
+* and the Data Plane (QFP)
 
 A router may show:
 
@@ -171,27 +170,27 @@ while the forwarding engine is already overloaded and dropping packets.
 
 ---
 
-# Useful Commands Summary
+**Useful Commands Summary:**
 
-## Logging & Cleanup
+Logging & Cleanup
 
 <pre class="overflow-visible! px-0!" data-start="4571" data-end="4715"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!"><div class="sticky bg-token-border-light"></div></div></div><div class="relative"><div class=""><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>undebug all</span><br/><br/><span>logging buffered </span><span class="ͼj">1048576</span><span> informational</span><br/><span>logging console warnings</span><br/><span>logging monitor warnings</span><br/><span>logging buffered informational</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class=""></div></div></div></div></div></pre>
 
-## Control Plane
+Control Plane
 
 <pre class="overflow-visible! px-0!" data-start="4735" data-end="4801"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!"><div class="sticky bg-token-border-light"></div></div></div><div class="relative"><div class=""><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>show processes cpu sorted 1min</span><br/><span>show platform resources</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class=""></div></div></div></div></div></pre>
 
-## Data Plane / QFP
+Data Plane / QFP
 
 <pre class="overflow-visible! px-0!" data-start="4824" data-end="4890"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!"><div class="sticky bg-token-border-light"></div></div></div><div class="relative"><div class=""><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>show platform hardware qfp active datapath utilization</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class=""></div></div></div></div></div></pre>
 
-## Feature Statistics
+Feature Statistics
 
 <pre class="overflow-visible! px-0!" data-start="4915" data-end="5051"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!"><div class="sticky bg-token-border-light"></div></div></div><div class="relative"><div class=""><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>show platform hardware qfp active feature nat datapath stats</span><br/><br/><span>show platform hardware qfp active feature pppoe datapath stats</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class=""></div></div></div></div></div></pre>
 
 ---
 
-# Final Thoughts
+**Final Thoughts**
 
 The Cisco ASR1001-X remains a powerful edge platform, but troubleshooting performance issues requires understanding its architecture.
 
