@@ -5,8 +5,7 @@ author: matlakow
 categories: [ linux, raid, cli ]
 image: assets/images/intel.png
 ---
-
-# Creating RAID10, Checking SMART, and Monitoring Rebuilds
+**Creating RAID10, Checking SMART, and Monitoring Rebuilds**
 
 Recently I had to configure and inspect a storage setup based on a MegaRAID / Intel RS2BL040 controller.
 Below is a quick operational guide with the exact commands I used for:
@@ -96,7 +95,7 @@ This shows rebuild percentage and status for all disks connected to the controll
 
 ## SMART Monitoring Configuration
 
-For automated monitoring I configured`smartd` with MegaRAID support.
+For automated monitoring I configured `smartd` with MegaRAID support.
 
 Example configuration:
 
@@ -129,4 +128,3 @@ The combination of:
 provides a solid toolkit for managing and monitoring RAID arrays on Linux.
 
 If you are running similar hardware, I highly recommend automating SMART checks and periodically reviewing controller event logs before failures become critical.
-
