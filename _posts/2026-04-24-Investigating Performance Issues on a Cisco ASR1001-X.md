@@ -5,15 +5,14 @@ author: matlakow
 categories: [ Cisco, performance, cli, networking ]
 image: assets/images/Activedirectory.png
 ---
-
-Control Plane vs Data Plane During a Suspected DDoS Attack
+**Control Plane vs Data Plane During a Suspected DDoS Attack**
 
 Recently, one of our edge routers — a Cisco ASR1001-X — started behaving unusually slow.
 CLI responses became delayed, monitoring showed intermittent spikes, and overall responsiveness degraded significantly.
 
 At first glance, it looked like a classic CPU overload issue, possibly caused by a DDoS attack or excessive traffic hitting the router.
 
-This post describes the troubleshooting process I used and, more importantly, explains the difference between the** ****Control Plane CPU** and the** ****Data Plane (QFP)** on Cisco ASR routers.
+This post describes the troubleshooting process I used and, more importantly, explains the difference between the ****Control Plane CPU** and the** **Data Plane (QFP)** on Cisco ASR routers.
 
 ---
 
@@ -50,7 +49,7 @@ That was the first clue that the problem might not be related to the main IOS XE
 
 ### 2. Data Plane (QFP – Quantum Flow Processor)
 
-The real packet forwarding engine inside the ASR1001-X is the** QFP (Quantum Flow Processor)**.
+The real packet forwarding engine inside the ASR1001-X is the QFP (Quantum Flow Processor).
 
 This hardware accelerator handles:
 
@@ -160,8 +159,8 @@ One of the biggest lessons from troubleshooting Cisco ASR platforms is:
 
 On ASR routers, you always need to inspect both:
 
-* the** ****Control Plane**
-* and the** ****Data Plane (QFP)**
+* the **Control Plane**
+* and the **Data Plane (QFP)**
 
 A router may show:
 
