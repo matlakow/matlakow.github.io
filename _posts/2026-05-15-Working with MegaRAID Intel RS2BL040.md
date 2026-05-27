@@ -123,7 +123,6 @@ The combination of:
 
 * `storcli64`
 * `smartctl`
-* and smartd`
 
 provides a solid toolkit for managing and monitoring RAID arrays on Linux.
 
