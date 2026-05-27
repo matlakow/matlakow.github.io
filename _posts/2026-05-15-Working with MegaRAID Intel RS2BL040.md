@@ -5,6 +5,7 @@ author: matlakow
 categories: [ linux, raid, cli ]
 image: assets/images/intel.png
 ---
+
 # Creating RAID10, Checking SMART, and Monitoring Rebuilds
 
 Recently I had to configure and inspect a storage setup based on a MegaRAID / Intel RS2BL040 controller.
@@ -24,17 +25,17 @@ If you work with LSI / MegaRAID controllers on Linux, this may save you some tim
 
 ## Listing Enclosures and Drives
 
-First, I checked what disks were available in the enclosures attached to controller** **`c0`.
+First, I checked what disks were available in the enclosures attached to controller c0`.
 
 <pre class="overflow-visible! px-0!" data-start="727" data-end="801"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!"><div class="sticky bg-token-border-light"></div></div></div><div class="relative"><div class=""><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>./storcli64 /c0 /e4 /sall show</span><br/><span>./storcli64 /c0 /e11 /sall show</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class=""></div></div></div></div></div></pre>
 
-This displays all drives connected to enclosure** **`e4` and** **`e11`.
+This displays all drives connected to enclosure e4` and e11`.
 
 ---
 
 ## Creating a RAID10 Array
 
-I created a RAID10 virtual drive using disks located in enclosure** **`11`.
+I created a RAID10 virtual drive using disks located in enclosure e11`.
 
 <pre class="overflow-visible! px-0!" data-start="974" data-end="1057"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!"><div class="sticky bg-token-border-light"></div></div></div><div class="relative"><div class=""><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>./storcli64 /c0 add vd </span><span class="ͼm">type</span><span class="ͼg">=</span><span>r10 </span><span class="ͼm">drives</span><span class="ͼg">=</span><span class="ͼj">11</span><span>:0,11:1,11:3,11:4 </span><span class="ͼm">pdperarray</span><span class="ͼg">=</span><span class="ͼj">2</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class=""></div></div></div></div></div></pre>
 
@@ -52,19 +53,7 @@ After creation, you can verify all virtual drives:
 
 ## Checking RAID Details
 
-### RAID1 (1TB)
-
-To inspect the first virtual drive:
-
-<pre class="overflow-visible! px-0!" data-start="1364" data-end="1403"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!"><div class="sticky bg-token-border-light"></div></div></div><div class="relative"><div class=""><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>./storcli64 /c0/v0 show all</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class=""></div></div></div></div></div></pre>
-
-To read SMART data from physical drives behind the RAID controller:
-
-<pre class="overflow-visible! px-0!" data-start="1474" data-end="1556"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!"><div class="sticky bg-token-border-light"></div></div></div><div class="relative"><div class=""><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>smartctl </span><span class="ͼn">-a</span><span> </span><span class="ͼn">-d</span><span> megaraid,5 /dev/sda</span><br/><span>smartctl </span><span class="ͼn">-a</span><span> </span><span class="ͼn">-d</span><span> megaraid,19 /dev/sda</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class=""></div></div></div></div></div></pre>
-
----
-
-### RAID10 (4TB)
+### RAID10 
 
 To inspect the RAID10 virtual drive:
 
@@ -74,7 +63,7 @@ SMART data for the member disks:
 
 <pre class="overflow-visible! px-0!" data-start="1694" data-end="1849"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!"><div class="sticky bg-token-border-light"></div></div></div><div class="relative"><div class=""><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>smartctl </span><span class="ͼn">-a</span><span> </span><span class="ͼn">-d</span><span> megaraid,12 /dev/sdb</span><br/><span>smartctl </span><span class="ͼn">-a</span><span> </span><span class="ͼn">-d</span><span> megaraid,13 /dev/sdb</span><br/><span>smartctl </span><span class="ͼn">-a</span><span> </span><span class="ͼn">-d</span><span> megaraid,14 /dev/sdb</span><br/><span>smartctl </span><span class="ͼn">-a</span><span> </span><span class="ͼn">-d</span><span> megaraid,15 /dev/sdb</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class=""></div></div></div></div></div></pre>
 
-One important thing to remember with MegaRAID controllers is that SMART access goes through the controller, not directly to the physical disks. That is why the** **`-d megaraid,N` parameter is required.
+One important thing to remember with MegaRAID controllers is that SMART access goes through the controller, not directly to the physical disks. That is why the -d megaraid,N` parameter is required.
 
 ---
 
