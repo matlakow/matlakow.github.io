@@ -3,7 +3,7 @@ layout: post
 title:  "Visualizing Suricata-Blocked Hosts on a Grafana World Map"
 author: matlakow
 categories: [ linux, grafana, suricata, mikrotik ]
-image: assets/images/suricata_worldmap_logo_130px.png
+image: assets/images/suricata_grafana_logo_150px.png
 ---
 ## Introduction
 
@@ -11,7 +11,7 @@ One of the things I like about running my own network security stack is being ab
 
 The result is a live map showing the geographic locations of hosts that have been blocked by Suricata.
 
-<img src="/assets/images/worldmap.png"></img>
+<img src="/assets/images/worldmap.png">
 
 ## **Architecture Overview**
 
@@ -89,7 +89,7 @@ root@exporter:/opt/ips# head wspolrzedne.txt
 
 ```
 
-> **Exposing Metrics to Prometheus**
+**Exposing Metrics to Prometheus**
 
 A small Python HTTP server reads the generated file and exposes three Prometheus metrics:
 
