@@ -101,6 +101,7 @@ mikrotik_ips_geo_lon
 The exporter runs as a systemd service:
 
 ```bash
+{% raw %}
 root@exporter:/opt/ips# cat /etc/systemd/system/mikrotik-geo-exporter.service 
 [Unit]
 Description=MikroTik GeoIP Prometheus Exporter
@@ -177,6 +178,7 @@ scrape_configs:
     static_configs:
       - targets:
           - exporter:8087
+{% endraw %}
 ```
 
 This is sample output:
