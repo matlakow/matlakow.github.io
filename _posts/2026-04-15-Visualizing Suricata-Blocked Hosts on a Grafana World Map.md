@@ -3,7 +3,7 @@ layout: post
 title:  "Visualizing Suricata-Blocked Hosts on a Grafana World Map"
 author: matlakow
 categories: [ linux, grafana, suricata, mikrotik ]
-image: _posts/images/2026-04-15-VisualizingSuricata-BlockedHostsonaGrafanaWorldMap/
+image: _posts/images/2026-04-15-VisualizingSuricata-BlockedHostsonaGrafanaWorldMap/grafana_worldmap.png
 ---
 ## Introduction
 
