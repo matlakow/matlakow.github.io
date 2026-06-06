@@ -123,7 +123,7 @@ WantedBy=multi-user.target
 
 This is code:
 
-```python
+```bash
 root@exporter:/opt/ips# cat exporter.py
 from http.server import BaseHTTPRequestHandler, HTTPServer
 FILE = "/opt/ips/wspolrzedne.txt"
