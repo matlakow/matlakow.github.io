@@ -11,7 +11,7 @@ One of the things I like about running my own network security stack is being ab
 
 The result is a live map showing the geographic locations of hosts that have been blocked by Suricata.
 
-![1780748064447](images/2026-04-15-VisualizingSuricata-BlockedHostsonaGrafanaWorldMap/1780748064447.png)
+`![Grafana WorldMap](/assets/images/worldmap.png)`
 
 ## **Architecture Overview**
 
